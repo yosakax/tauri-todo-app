@@ -1,9 +1,13 @@
 import { useState } from "react";
 
-const Form = () => {
-  const [composition, setComposition] = useState(false);
-  const [item, setItem] = useState("");
-  const [toDoList, setToDoList] = useState([]);
+const Form = ({
+  item,
+  setItem,
+  composition,
+  setComposition,
+  toDoList,
+  setToDoList,
+}) => {
   const addToDoList = (e) => {
     if (!composition && e.key === "Enter" && item !== "") {
       setToDoList([...toDoList, item]);
@@ -22,20 +26,22 @@ const Form = () => {
           onCompositionStart={() => setComposition(true)}
           onCompositionEnd={() => setComposition(false)}
           onKeyDown={(e) => addToDoList(e)}
-          // placeholder="Enter a value a"
           value={item}
+          placeholder="Enter Next Work!"
         />
         <button type="submit" onClick={addToDoList}>
           ADD
         </button>
       </div>
       <div>
-        {toDoList.map((todo, index) => (
-          <div className="row" key={index}>
-            <p>{todo}</p>
-            <button className="btn btn-primary">done</button>
-          </div>
-        ))}
+        <ul>
+          {toDoList.map((todo, index) => (
+            <div className="row" key={index}>
+              <li>{todo}</li>
+              <button className="btn btn-primary">done</button>
+            </div>
+          ))}
+        </ul>
       </div>
     </div>
   );
