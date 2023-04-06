@@ -14,6 +14,12 @@ const Form = ({
       setItem("");
     }
   };
+  const addToDoListOnButton = () => {
+    if (item !== "") {
+      setToDoList([...toDoList, item]);
+      setItem("");
+    }
+  };
   return (
     <div className="container">
       <div className="row">
@@ -29,7 +35,7 @@ const Form = ({
           value={item}
           placeholder="Enter Next Work!"
         />
-        <button type="submit" onClick={addToDoList}>
+        <button type="submit" onClick={addToDoListOnButton}>
           ADD
         </button>
       </div>
