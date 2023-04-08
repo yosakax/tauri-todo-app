@@ -54,7 +54,10 @@
         "title": "tauri-app",
         "width": 800,
         "height": 600,
-        "decorations": false
+        "decorations": false,
+        "wix": {
+          "language": "ja-JP"
+        }
       }
     ]
   }
