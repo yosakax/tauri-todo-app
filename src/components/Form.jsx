@@ -3,28 +3,17 @@ import { useState } from "react";
 const Form = ({
   item,
   setItem,
-  composition,
   setComposition,
-  toDoList,
-  setToDoList,
+  addToDoList,
+  addToDoListOnButton,
 }) => {
-  const addToDoList = (e) => {
-    if (!composition && e.key === "Enter" && item !== "") {
-      setToDoList([...toDoList, item]);
-      setItem("");
-    }
-  };
-  const addToDoListOnButton = () => {
-    if (item !== "") {
-      setToDoList([...toDoList, item]);
-      setItem("");
-    }
-  };
   return (
-    <div className="container">
-      <div className="row">
+    <div className="container justify-content-center">
+      <div className="d-flex">
         <input
+          type="text"
           id="input-a"
+          className="form-control"
           onChange={(e) => {
             e.preventDefault();
             setItem(e.currentTarget.value);
@@ -35,19 +24,13 @@ const Form = ({
           value={item}
           placeholder="Enter Next Work!"
         />
-        <button type="submit" onClick={addToDoListOnButton}>
+        <button
+          className="btn btn-primary ms-3"
+          type="submit"
+          onClick={addToDoListOnButton}
+        >
           ADD
         </button>
-      </div>
-      <div>
-        <ul>
-          {toDoList.map((todo, index) => (
-            <div className="row" key={index}>
-              <li>{todo}</li>
-              <button className="btn btn-primary">done</button>
-            </div>
-          ))}
-        </ul>
       </div>
     </div>
   );
