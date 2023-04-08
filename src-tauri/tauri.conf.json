@@ -40,8 +40,10 @@
       ],
       "identifier": "com.tauri-app",
       "targets": "all",
-      "wix": {
-        "language": "ja-JP"
+      "windows": {
+        "wix": {
+          "language": "ja-JP"
+        }
       }
     },
     "security": {
