@@ -1,7 +1,20 @@
-# Tauri + React
+# Tauri-React-ToDoList
 
-This template should help get you started developing with Tauri and React in Vite.
+![img](img/top.png)
 
-## Recommended IDE Setup
+This repository is ToDoList application with Tauri + React
 
-- [VS Code](https://code.visualstudio.com/) + [Tauri](https://marketplace.visualstudio.com/items?itemName=tauri-apps.tauri-vscode) + [rust-analyzer](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer)
+## installation
+
+please download each os from release page.
+
+## how to dev
+
+You must install node.js and rust in advance.
+
+```bash
+git clone https://github.com/yosakax/tauri-todo-app.git
+cd tauri-todo-app
+npm install
+npm run tauri dev
+```
