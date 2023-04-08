@@ -2,7 +2,6 @@ import { useState } from "react";
 import { invoke } from "@tauri-apps/api/tauri";
 import Form from "./components/Form";
 import ToDoList from "./components/ToDoList";
-import "bootstrap";
 import "./App.css";
 
 function App() {
